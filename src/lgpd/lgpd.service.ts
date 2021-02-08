@@ -15,7 +15,6 @@ export class LgpdService {
     async getById (id: number) {
         try {
             const dadosUsuario = await this.getUsuarioAPI(id);
-            //console.log(id, dadosUsuario.data.email);
             if (dadosUsuario) {
                 this.dados = {
                     email: dadosUsuario.data.email,
@@ -55,14 +54,12 @@ export class LgpdService {
     }
 
     async getPedidosAPI (email: string, tentativas = 1) {
-        console.log(email, tentativas);
         const url = `${this.apiBase}/orders_service/my_orders`;
         const headersRequest = {'Authorization': `Bearer ${this.apiToken}`};
         const dadosPedidos = await this.http.post(url, {email: email}, { headers: headersRequest })
                                 .toPromise()
                                 .then(response => response.data)
                                 .catch(error => {
-                                    console.log(tentativas, error.response.status);
                                     if (error.response.status == 500 && tentativas <= this.apiTentivasTimeOut) {
                                         console.log('IF');
                                         return this.getPedidosAPI(email, tentativas + 1);
@@ -71,9 +68,6 @@ export class LgpdService {
                                     }
                                 });
         
-        //const pedidos = dadosPedidos.data.orders;
-        //console.log(pedidos);
-        //this.traduzirPedidos(pedidos);
         return this.traduzirPedidos(dadosPedidos.data.orders);
     }
 
