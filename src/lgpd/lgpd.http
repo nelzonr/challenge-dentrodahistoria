@@ -1,0 +1,15 @@
+#### Customer Service
+GET https://iqm4d3s8w0.execute-api.us-east-1.amazonaws.com/dev/customer_service/user_data?user_id=123
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2Zha2UuZmFrZS5jb20iLCJleHAiOjE4OTczMDU5ODksImp0aSI6ImViNTJzZjlhLTg4OGMtNDk5OC0xMjM0LWUzM2M3NTk4NDBmNjMiLCJpYXQiOjE1ODYyNjU5ODksImlzcyI6Imh0dHBzOi8vZmFrZS5mYWtlLmNvbSIsInVzZXJfaWQiOjEyM30.Sp00QoOmeE7LzQfF2EjqUnHkt-ySwSPDKGFTVZh89E0
+
+#### Orders Service
+POST https://iqm4d3s8w0.execute-api.us-east-1.amazonaws.com/dev/orders_service/my_orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2Zha2UuZmFrZS5jb20iLCJleHAiOjE4OTczMDU5ODksImp0aSI6ImViNTJzZjlhLTg4OGMtNDk5OC0xMjM0LWUzM2M3NTk4NDBmNjMiLCJpYXQiOjE1ODYyNjU5ODksImlzcyI6Imh0dHBzOi8vZmFrZS5mYWtlLmNvbSIsInVzZXJfaWQiOjEyM30.Sp00QoOmeE7LzQfF2EjqUnHkt-ySwSPDKGFTVZh89E0
+Content-Type: application/json
+
+{
+    "email": "fake@dentrodahistoria.com.br"
+}
+
+#### Search Service
+GET https://iqm4d3s8w0.execute-api.us-east-1.amazonaws.com/dev/search_service/history?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9&limit=10&page=1
